@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 
 group :production do
   gem 'pg'
-  gem 'dm-postgres-adapter'
+    #gem 'dm-postgres-adapter'  #bundle install doesn't work
 end
 
 group :development do

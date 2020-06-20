@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  #wrap_parameters :user, include: [:name, :password, :password_confirmation]
 
   # GET /users
   # GET /users.json
@@ -25,6 +26,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
     @user = User.new(user_params)
 
     respond_to do |format|
